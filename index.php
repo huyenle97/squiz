@@ -2,7 +2,7 @@
 // core configuration
 include_once "config/core.php";
 // set page title
-$page_title="Hệ thống thi trắc nghiệm trực tuyến";
+$page_title="HỆ THỐNG THI TRẮC NGHIỆM TRỰC TUYẾN";
  
 // include login checker
 // $require_login=true;
@@ -19,7 +19,8 @@ echo "<div class='col-md-12'>";
     // if login was successful
     if($action=='login_success'){
         echo "<div class='alert alert-info'>";
-            echo "<strong>Hi " . $_SESSION['firstname'] . ", welcome back!</strong>";
+            echo "<strong>Xin chào " . $_SESSION['firstname'] . ", chào 
+            mừng trở lại!</strong>";
         echo "</div>";
     }
  

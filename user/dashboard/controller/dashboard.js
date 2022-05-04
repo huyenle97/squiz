@@ -59,10 +59,19 @@ app.controller("dashboardCtl", function($scope,$http,$timeout,$rootScope,$locati
                 $scope.checkdone=$scope.checkdone;
                 console.log( $scope.checkdone)
                 if($scope.checkdone==-1){
-                    alert("Bạn đã làm đề thi này rồi.", "Thông Báo")
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Thông Báo',
+                        html: '<p style="font-size: 16px">Bạn đã làm đề thi này rồi!</p>',
+                    })
                 }
+
                 if($scope.checkdone==-2){
-                    alert("Bạn không có trong danh sách thi.", "Thông Báo")
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Thông Báo',
+                        html: '<p style="font-size: 16px">Bạn không có trong danh sách thi</p>',
+                    })
                 }
                 if($scope.checkdone==0){
                     $scope.createExam(userID,ID_ExamConfig); // tao de thi moi
