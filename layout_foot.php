@@ -4,7 +4,7 @@
     <div class="footer-left">
         <h3>QuocViet<span>Design</span></h3>
         <p class="footer-links">
-            <a href="#">Home</a>
+            <a href="#">Trang chủ</a>
             ·
             <a href="#">Blog</a>
             ·
@@ -16,16 +16,16 @@
             ·
             <a href="#">Contact</a>
         </p>
-        <p class="footer-company-name">QuocVietDesign &copy; 2021</p>
+        <p class="footer-company-name">QuocVietDesign &copy; 2022</p>
     </div>
     <div class="footer-center">
         <div>
             <i class="fa fa-map-marker"></i>
-            <p><span>Califonia </span> US(united State)</p>
+            <p>Vinh - Nghệ An</p>
         </div>
         <div>
             <i class="fa fa-phone"></i>
-            <p>+1 555 000000000</p>
+            <p>09218414142</p>
         </div>
         <div>
             <i class="fa fa-envelope"></i>
@@ -38,10 +38,10 @@
             Quoc Viet Design is a blog for web designers, web develpor  &amp; SEO Learner.
         </p>
         <div class="footer-icons">
-            <a href="#"><i class="fa fa-facebook"></i></a>
-            <a href="#"><i class="fas fa-twitter"></i></a>
-            <a href="#"><i class="fas fa-linkedin"></i></a>
-            <a href="#"><i class="fas fa-github"></i></a>
+            <a href="#"><i class="fab fa-facebook-f" style="color:blue"></i></a>
+            <a href="#"><i class="fab fa-youtube" style="color:red"></i></a>
+            <a href="#"><i class="fab fa-google-plus-g" style="color:green"></i></a>
+            <a href="#"><i class="fab fa-github" style="color:black"></i></a>
         </div>
     </div>
 </footer>

@@ -299,7 +299,7 @@ div#blueimp-gallery div.modal{ overflow: visible; }
     .footer-distributed .footer-center i{
         background-color:  #ffffff;
         color: #2fdd04;
-        font-size: 25px;
+        font-size: 15px;
         width: 38px;
         height: 38px;
         border-radius: 50%;
@@ -399,4 +399,10 @@ div#blueimp-gallery div.modal{ overflow: visible; }
             font-size: auto;
         }
     
+    }
+    .btn-start {
+        padding: 5px 10px;
+        border-radius: 5px;
+        border-color: #ffbc00;
+        background-color: #ffbc00;
     }

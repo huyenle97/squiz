@@ -41,20 +41,20 @@
                                 </div>    
                                 
                                 <div class="row">
-                                    <span class="col-xs-12 "><i class="fas fa-book-reader" style="margin-right:10px;"></i> Tên môn học: {{Config.subjectName}}</span>
+                                    <span class="col-xs-12 "><i class="fas fa-book-reader" style="margin-right:10px; margin-top:10px"></i> Tên môn học: {{Config.subjectName}}</span>
                                 </div> 
                                 
                                 <div class="row">
-                                    <span class="col-xs-12 "><i class="fas fa-list-ol" style="margin-right:10px;"></i> Số lượng câu hỏi: {{Config.Num_Question}}</span>
+                                    <span class="col-xs-12 "><i class="fas fa-list-ol" style="margin-right:10px; margin-top:10px"></i> Số lượng câu hỏi: {{Config.Num_Question}}</span>
                                 </div>
 
                                 <div class="row">
-                                    <span class="col-xs-12 "><i class="far fa-clock" style="margin-right:10px;"></i> Thời gian làm bài: {{Config.Totaltime}} phút</span>
+                                    <span class="col-xs-12 "><i class="far fa-clock" style="margin-right:10px; margin-top:10px"></i> Thời gian làm bài: {{Config.Totaltime}} phút</span>
                                 </div>
                             </div>  
                         </div>
                         <div class="modal-footer">
-                            <button type="button" ng-click= <?php echo isset($_SESSION['user_id']) ? "check($_SESSION[user_id],Config.ID_ExamConfig)" : "login()"; ?> class="btn btn-success" data-dismiss="modal">Bắt đầu làm bài</button>
+                            <button type="button" ng-click= <?php echo isset($_SESSION['user_id']) ? "check($_SESSION[user_id],Config.ID_ExamConfig)" : "login()"; ?> class="btn btn-start" data-dismiss="modal">Bắt đầu làm bài</button>
                         </div>
                     </div>
                 </div>

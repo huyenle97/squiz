@@ -46,7 +46,7 @@ if ($email_exists && password_verify($_POST['password'], $user->password) && $us
  
     // if access level is 'Admin', redirect to admin section
     if($user->access_level=='Admin'){
-        header("Location: {$home_url}admin/index.php?action=login_success");
+        header("Location: {$home_url}admin/subject.php?action=login_success");
     }
  
     // else, redirect only to 'Customer' section

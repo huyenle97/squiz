@@ -42,12 +42,12 @@ include '../../../layout_head.php';
 			<div class="clock" style="margin-top:2em;"></div>
 			<div class="message"></div>
 			<button type="button" ng-click="checkoptions(Questions)" ng-if="Isfinish==false" style="height:50px; width:100px; margin-left:30%; margin-bottom:10px;margin-top:20px" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Nộp bài</button>
-			<div style="font-size:18px;">
+			<div style="font-size:18px;"  ng-if="Isfinish==true">
 				<div>
 					<p> Kết quả bài thi: </p>
 				</div>
-				<div style="margin-top:10px;" ng-if="Isfinish==true"> Bạn làm đúng <b style= "color:red">{{NumberCorecct}}/{{config.Num_Question}}</b> câu hỏi</div>
-				<div style="margin-top:10px;" ng-if="Isfinish==true"> Điểm của bạn là:<b style= "color:red"> {{Score}}</b></div>
+				<div style="margin-top:10px;"> Bạn làm đúng <b style= "color:red">{{NumberCorecct}}/{{config.Num_Question}}</b> câu hỏi</div>
+				<div style="margin-top:10px;"> Điểm của bạn là:<b style= "color:red"> {{Score}}</b></div>
 			</div>
 		</div>
 	</div>
