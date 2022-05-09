@@ -3,7 +3,7 @@
 include_once "config/core.php";
  
 // set page title
-$page_title = "Login";
+$page_title = "Đăng nhập";
  
 // include login checker
 $require_login=false;
@@ -65,7 +65,7 @@ else{
 // include page header HTML
 include_once "layout_head.php";
  
-echo "<div class='col-sm-6 col-md-4 col-md-offset-4'>";
+echo "<div class='col-sm-6 col-md-6 col-md-offset-3'>";
  
     // alert messages will be here
     // get 'action' value in url parameter to display corresponding prompt messages
@@ -86,25 +86,25 @@ else if($action=='please_login'){
 // tell the user if access denied
 if($access_denied){
     echo "<div class='alert alert-danger margin-top-40' role='alert'>
-        Truy cập bị từ chối.<br /><br />
-        Tên tài khoản hoặc mật khẩu không đúng
+        Đăng nhập thất bại. Tên tài khoản hoặc mật khẩu không đúng.<br /><br />
+        Vui lòng đăng nhập lại! 
     </div>";
 }
  
     // actual HTML login form
-    echo "<div class='account-wall' style='margin-top: 140px'>";
-        echo "<div id='my-tab-content' class='tab-content'>";
-            echo "<div class='tab-pane active' id='login'>";
-                echo "<img class='profile-img' style='width:220px; height:160px;' src='images/login.png'>";
-                echo "<form class='form-signin' action='" . htmlspecialchars($_SERVER["PHP_SELF"]) . "' method='post'>";
-                    echo "<input type='text' name='email' class='form-control' placeholder='Email' required autofocus />";
-                    echo "<input type='password' name='password' class='form-control' placeholder='Password' required />";
-                    echo "<input type='submit' class='btn btn-lg btn-primary btn-block' value='Đăng nhập' />";
-                    echo"<a href=".$home_url."forgotPass.php>Bạn đã quên mật khẩu?</a>";
-                echo "</form>";
-            echo "</div>";
+    echo "<div class='account-wall'";
+    echo "<div id='my-tab-content' class='tab-content'>";
+        echo "<div class='tab-pane active' id='login'>";
+            echo "<img class='profile-img' style='width:300px; height:200px;' src='images/logonobg.png'>";
+            echo "<form class='form-signin' action='" . htmlspecialchars($_SERVER["PHP_SELF"]) . "' method='post'>";
+                echo "<input type='text' name='email' class='form-control' placeholder='Email' required autofocus />";
+                echo "<input type='password' name='password' class='form-control' placeholder='Password' required />";
+                echo "<input type='submit' class='btn btn-lg btn-block btn-login' value='Đăng nhập' />";
+                echo"<a href=".$home_url."forgotPass.php><i>Bạn đã quên mật khẩu?</i></a>";
+            echo "</form>";
         echo "</div>";
     echo "</div>";
+echo "</div>";
  
 echo "</div>";
 echo "<style>";
