@@ -160,3 +160,10 @@
        margin-bottom:10px;
     
     }
+
+    .questionCtl, .modal-content {
+        max-height: 100%;
+    }
+    .questionCtl {
+        overflow-y: scroll;
+    }

@@ -208,6 +208,7 @@ div#blueimp-gallery div.modal{ overflow: visible; }
     .container{
         background: #eff3f8;  
         padding: 0;
+        width: 100%;
     }
     .page-header{
         margin-top:70px;
@@ -300,7 +301,7 @@ div#blueimp-gallery div.modal{ overflow: visible; }
     .footer-distributed .footer-center i{
         background-color:  #ffffff;
         color: #2fdd04;
-        font-size: 25px;
+        font-size: 15px;
         width: 38px;
         height: 38px;
         border-radius: 50%;
@@ -400,4 +401,7 @@ div#blueimp-gallery div.modal{ overflow: visible; }
             font-size: auto;
         }
     
+    }
+    .form-register{
+        margin-left: 10%
     }

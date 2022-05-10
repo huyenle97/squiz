@@ -3,14 +3,14 @@
 include_once "../../../config/core.php";
 include_once "../../login_checker.php";
 // set page title
-$page_title="Danh mục câu hỏi";
+$page_title="Danh sách câu hỏi";
  
 // include page header HTML
 include '../../layout_head.php';
 ?>
     <div ng-app="testApp" ng-controller="questionCtl">
     <div class="col-md-12">
-    <div id="myModal" class="modal fade" role="dialog">
+    <div id="myModal" class="modal fade questionCtl" role="dialog">
             <div class="modal-dialog">
 
                 <!-- Modal content-->

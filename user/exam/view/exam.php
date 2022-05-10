@@ -35,11 +35,6 @@ include '../../../layout_head.php';
                 <i class="far fa-clock" style="margin-right:10px;"></i> Thời gian làm bài: {{config.Totaltime}} phút
             </div>
 
-			<div class="Totaltime" style="margin-top:30px; color:#f58220; font-size:18px;">
-              	<b> <i class="far fa-clock"></i> Thời gian còn lại </b>
-			</div>
-			
-			<div class="clock" style="margin-top:2em;"></div>
 			<div class="message"></div>
 			<button type="button" ng-click="checkoptions(Questions)" ng-if="Isfinish==false" style="height:50px; width:100px; margin-left:30%; margin-bottom:10px;margin-top:20px" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Nộp bài</button>
 			<div style="font-size:18px;">

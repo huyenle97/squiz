@@ -12,7 +12,6 @@
             </button>
  
             <!-- Change "Site Admin" to your site name -->
-            <a class="navbar-brand" href="<?php echo $home_url; ?>admin/index.php"><span class="glyphicon glyphicon-education"></span>Admin</a>
         </div>
  
         <div class="navbar-collapse collapse">

@@ -3,7 +3,7 @@
 include_once "../../../config/core.php";
 include_once "../../login_checker.php";
 // set page title
-$page_title="Danh mục môn học";
+$page_title="Danh sách môn học";
  
 // include page header HTML
 include '../../layout_head.php';
@@ -17,7 +17,7 @@ include '../../layout_head.php';
                 <div class="modal-content">
                     <div class="modal-header" id="mydivheader">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title"> <b>Quản lý môn học</b> </h4>
+                        <h4 class="modal-title"> <b>Thêm mới môn học</b> </h4>
                     </div>
                     <div class="modal-body">
 
