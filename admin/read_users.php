@@ -8,7 +8,7 @@ include_once "login_checker.php";
 // include classes
 include_once '../config/database.php';
 include_once '../objects/user.php';
-$page_title="Danh mục người dùng";
+$page_title="Danh sách người dùng";
 // get database connection
 $database = new Database();
 $db = $database->getConnection();

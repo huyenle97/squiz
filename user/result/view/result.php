@@ -4,7 +4,7 @@ include_once "../../../config/core.php";
 $require_login=true;
 include_once "../../../login_checker.php";
 // set page title
-$page_title="Danh mục kết quả thi";
+$page_title="Kết quả thi của các môn học";
  
 // include page header HTML
 include '../../../layout_head.php';

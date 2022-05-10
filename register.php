@@ -3,7 +3,7 @@
 include_once "config/core.php";
  
 // set page title
-$page_title = "Register";
+$page_title = "Đăng ký tài khoản";
  
 // include login checker
 include_once "login_checker.php";
@@ -16,7 +16,7 @@ include_once "libs/php/utils.php";
 // include page header HTML
 include_once "layout_head.php";
  
-echo "<div class='col-md-12'>";
+echo "<div class='col-md-10 form-register'>";
  
     // registration form HTML will be here
     // code when form was submitted will be here
@@ -124,7 +124,7 @@ if($user->create()){
             <td></td>
             <td>
                 <button type="submit" class="btn btn-primary">
-                    <span class="glyphicon glyphicon-plus"></span> Đăng ký
+                    <span class="glyphicon glyphicon-check"></span>  Đăng ký
                 </button>
             </td>
         </tr>
