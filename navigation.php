@@ -16,13 +16,16 @@
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <!-- link to the "Cart" page, highlight if current page is cart.php -->
+                <li>
+                    <img src='http://localhost/squiz/images/rm-bgr.png' style="width: 30px; height: 30px; margin-top:10px">
+                </li>
                 <li <?php echo $page_title=="Hệ thống thi trắc nghiệm trực tuyến" ? "class='active'" : ""; ?> >
                     <a href="<?php echo $home_url; ?>">
                         <span class="glyphicon glyphicon-home"></span> Trang chủ 
                     </a>
                 </li>
                 <?php 
-                if(isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true && $_SESSION['access_level']=='Customer')
+                if(isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true && $_SESSION['access_level']=='Student')
                 {
                 ?>
                     <li <?php echo $page_title=="Tra cứu điểm thi" ? "class='active'" : ""; ?>>
@@ -33,7 +36,7 @@
                 ?>
             </ul>
             <?php
-            if(isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true && $_SESSION['access_level']=='Customer')
+            if(isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true && $_SESSION['access_level']=='Student')
             {
             ?>
             <ul class="nav navbar-nav navbar-right">
@@ -44,7 +47,7 @@
                         &nbsp;&nbsp;<span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="<?php echo $home_url; ?>user/info/view/info.php">Tài khoản</a></li>
+                        <li><a href="<?php echo $home_url; ?>user/info/view/info.php">Thông tin tài khoản</a></li>
                         <li><a href="<?php echo $home_url; ?>logout.php">Đăng xuất</a></li>
                     </ul>
                 </li>

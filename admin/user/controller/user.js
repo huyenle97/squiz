@@ -2,8 +2,12 @@ var app = angular.module("testApp",  ['bsTable']);
 app.controller("userCtrl", function($scope,$http,$timeout) {
     $scope.Users=[];
     $scope.check=false;
+    $scope.file=null;
     $scope.result=null;
     $scope.user={};
+    $scope.init = function() {
+        console.log('aaaaaaaaaaa');
+    }
     $scope.edit=function(x){
         alert("Row index is: " +x);
     }
@@ -16,7 +20,8 @@ app.controller("userCtrl", function($scope,$http,$timeout) {
         console.log($scope.Users);
     });
     }
-    $scope.getUsers(); 
+    $scope.getUsers();
+    $scope.init(); 
     $scope.opencreateUser= function(){
         $scope.user={};
     }
@@ -46,6 +51,10 @@ app.controller("userCtrl", function($scope,$http,$timeout) {
 
     $scope.editUser=function(){
     }
+    $scope.uploadFile = function () {
+    console.log("🚀 ~ file: user.js ~ line 51 ~ app.controller ~ file", $scope.file)
+        $scope.file = file;
+    };
     $scope.saveUser =function(){
         var request = $http({
             method: "PUT",
@@ -87,6 +96,31 @@ app.controller("userCtrl", function($scope,$http,$timeout) {
                 $scope.result=response.data;
                 $scope.getUsers();
                 $scope.user={};
+                $timeout($scope.autoHide, 5000);
+        });
+    }
+
+    $scope.importUser=function(){
+    }
+    $scope.importUsers= function(){
+        var formData = new FormData();
+
+        // add assoc key values, this will be posts values
+        formData.append("file",  $scope.file,  $scope.file.name);
+        formData.append("upload_file", true);
+        var request = $http({
+            method: "POST",
+            url: "http://localhost/squiz/admin/user/controller/importUser.php",
+            data: formData,
+            headers: { 'Content-Type': 'multipart/form-data' }
+            });
+        
+        /* Check whether the HTTP Request is successful or not. */
+            request.then(function (response) {
+                console.log("🚀 ~ file: user.js ~ line 117 ~ response", response)
+                // $scope.result=response.data;
+                $scope.getUsers();
+                $scope.file=null;
                 $timeout($scope.autoHide, 5000);
         });
     }

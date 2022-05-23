@@ -21,7 +21,7 @@
     <link href="<?php echo $home_url . "libs/css/admin.css" ?>" rel="stylesheet" />
     <link rel="icon" href="<?php echo $home_url?>/images/favicon.png" type="image/png"/>
     <link rel="shortcut icon" href="<?php echo $home_url?>/images/favicon.png" type="image/png"/>
- 
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body ng-controller="TestAppCtrl">
 
