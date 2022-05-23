@@ -49,7 +49,7 @@ $user->lastname=$_POST['lastname'];
 $user->contact_number=$_POST['contact_number'];
 $user->address=$_POST['address'];
 $user->password=$_POST['password'];
-$user->access_level='Customer';
+$user->access_level='Student';
 $user->status=0;
 // access code for email verification
 $access_code=$utils->getToken();

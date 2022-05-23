@@ -2,21 +2,8 @@
 <div class= "footer" class="page-wrapper-row" style="width:100% ;height:100px" >
 <footer class="footer-distributed">
     <div class="footer-left">
-        <h3>QuocViet<span>Design</span></h3>
-        <p class="footer-links">
-            <a href="#">Home</a>
-            ·
-            <a href="#">Blog</a>
-            ·
-            <a href="#">Pricing</a>
-            ·
-            <a href="#">About</a>
-            ·
-            <a href="#">Faq</a>
-            ·
-            <a href="#">Contact</a>
-        </p>
-        <p class="footer-company-name">QuocVietDesign &copy; 2022</p>
+        <img src='http://localhost/squiz/images/rm-bgr.png' style="width: 200px; height: 200px">
+       
     </div>
     <div class="footer-center">
         <div>
@@ -34,8 +21,8 @@
     </div>
     <div class="footer-right">
         <p class="footer-company-about">
-            <span>About the company</span>
-            Quoc Viet Design is a blog for web designers, web develpor  &amp; SEO Learner.
+            <span>Đồ án tốt nghiệp</span>
+            <p class="footer-company-name">QuocVietDesign &copy; 2022</p>
         </p>
         <div class="footer-icons">
             <a href="#"><i class="fab fa-facebook-square"></i></a>

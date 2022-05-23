@@ -49,7 +49,7 @@ if ($email_exists && password_verify($_POST['password'], $user->password) && $us
         header("Location: {$home_url}admin/read_users.php?action=login_success");
     }
  
-    // else, redirect only to 'Customer' section
+    // else, redirect only to 'Student' section
     else{
         header("Location: {$home_url}index.php?action=login_success");
     }
