@@ -93,6 +93,13 @@
                 <input type="text" class="form-control" ng-model="user.contact_number" />
                 </div>
             </div>
+     
+            <div class="row">
+                <div class="col-xs-12">
+                    <label class="bold">MSSV</label>
+                    <input type="text" class="form-control" ng-model="user.mssv" />
+                </div>
+            </div>
 
             <div class="row">
                 <div class="col-xs-12">
@@ -101,7 +108,7 @@
                 </div>
             </div>
 
-                <div class="row">
+            <div class="row">
                 <div class="col-xs-12">
                     <label class="bold">Phân quyền</label>
                     <select class="form-control" ng-model="user.access_level">
@@ -161,6 +168,13 @@
                     <div class="col-xs-6">
                     <label class="bold">Số điện thoại</label>
                 <input type="text" class="form-control" ng-model="user.contact_number" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <label class="bold">MSSV</label>
+                    <input type="text" class="form-control" ng-model="user.mssv" />
                 </div>
             </div>
 

@@ -18,6 +18,7 @@
 	$user->address = $request->user->address;
 	$user->email = $request->user->email;
 	$user->status = $request->user->status;
+	$user->MSSV=$request->user->mssv;
 
 	$stmt = $user->updateUser();
 	echo $stmt;

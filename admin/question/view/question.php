@@ -27,8 +27,8 @@ include '../../layout_head.php';
                          <div class="col-xs-12">
                              <label class="bold" > Môn học </label>
                              <select class="form-control" data-ng-model="question.subject"  ng-options="sj.subjectName for sj in Subjects"></select>
-                             </div>
-                         <label class="col-xs-12">Nội dung</label>
+                        </div>
+                         <label class="col-xs-12 content-question">Nội dung</label>
                          <textarea class="col-xs-11" style="margin:15px; margin-left:15px;" class="form-control ng-pristine ng-valid ng-empty ng-touched" ng-model="question.ContentQs" rows="3" style="resize: vertical; overflow-x: hidden"></textarea>
                          </div>
                        </div>

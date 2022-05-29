@@ -28,7 +28,7 @@ app.controller("userCtrl", function($scope,$http,$timeout) {
 
     
     $scope.createUser= function(){
-       
+       console.log($scope.user);
         var request = $http({
             method: "POST",
             url: "http://localhost/squiz/admin/user/controller/postUser.php?method=post_user",
@@ -52,7 +52,6 @@ app.controller("userCtrl", function($scope,$http,$timeout) {
     $scope.editUser=function(){
     }
     $scope.uploadFile = function () {
-    console.log("🚀 ~ file: user.js ~ line 51 ~ app.controller ~ file", $scope.file)
         $scope.file = file;
     };
     $scope.saveUser =function(){
@@ -167,8 +166,13 @@ app.controller("userCtrl", function($scope,$http,$timeout) {
             columns: [{
                 field: 'state',
                 checkbox: true
-            },
-             {
+            }, {
+                field: 'MSSV',
+                title: 'MSSV',
+                align: 'center',
+                valign: 'bottom',
+                sortable: true
+            }, {
                 field: 'firstname',
                 title: 'Họ',
                 align: 'center',

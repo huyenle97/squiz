@@ -4,17 +4,35 @@ app.controller("resultCtl", function($scope,$http) {
     $scope.check=false;
     $scope.result=null;
     $scope.result={};
+    $scope.examples=[];
+    $scope.example=null;
 
     $scope.getResults=function(){
         $http.get("http://localhost/squiz/admin/result/controller/getResult.php?method=load_Results").then(function (response) {
-            console.log(response);
         $scope.Results = response.data.records;
         $scope.bsTableResultControl.options.data = $scope.Results;
         $scope.bsTableResultControl.options.totalRows = $scope.Results.length; 
     });
     }
     $scope.getResults();  
-    
+    $scope.getExamples=function(){
+            $http.get("http://localhost/squiz/admin/exam_config/controller/getExam.php?method=load_Exams").then(function (response) {
+            $scope.examples = response.data.records;
+            $scope.examples.unshift({
+                Name: 'Tất cả',
+                ID_ExamConfig: ''
+            })
+            $scope.example= $scope.examples[0];
+        });
+    }
+    $scope.getExamples();
+    $scope.loadResult=function(data){
+        $http.get("http://localhost/squiz/admin/result/controller/getResult.php?method=load_Results&id_example="+data.ID_ExamConfig).then(function (response) {
+            $scope.Results = response.data.records;
+            $scope.bsTableResultControl.options.data = $scope.Results;
+            $scope.bsTableResultControl.options.totalRows = $scope.Results.length; 
+        });
+    };
     $scope.bsTableResultControl = {
         options: {
             data: $scope.Result,

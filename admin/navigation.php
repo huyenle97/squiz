@@ -1,73 +1,54 @@
-<!-- navbar -->
-<div class="navbar navbar-default navbar-static-top" role="navigation">
-    <div class="container-fluid">
- 
-        <div class="navbar-header">
-            <!-- to enable navigation dropdown when viewed in mobile device -->
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            </button>
- 
-            <!-- Change "Site Admin" to your site name -->
-        </div>
- 
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
- 
- 
-                <!-- highlight for order related pages -->
-                <li <?php echo $page_title=="Admin Index" ? "class='active'" : ""; ?>>
-                    <a href="<?php echo $home_url; ?>admin/index.php"><span class="glyphicon glyphicon-home"></span> Trang chủ</a>
-                </li>
- 
-                <!-- highlight for user related pages -->
-                <li <?php echo $page_title=="Danh mục người dùng" ? "class='active'" : ""; ?> >
-                    <a href="<?php echo $home_url; ?>admin/read_users.php"><span class=""><span class="glyphicon glyphicon-user"></span> Tài khoản</a>
-                </li>
-               
-                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-list"></span> Danh mục</a>
-                  <ul class="dropdown-menu">
 
-                    <li <?php echo $page_title=="Danh mục môn học" ? "class='active'" : ""; ?> >
-                    <a href="<?php echo $home_url; ?>admin/subject/view/subject.php">Môn học</a>
-                   </li>
-
-                   <li <?php echo $page_title=="Danh mục câu hỏi" ? "class='active'" : ""; ?> >
-                    <a href="<?php echo $home_url; ?>admin/question/view/question.php">Câu hỏi</a>
-                   </li>
-                    
-                   <li <?php echo $page_title=="Cấu hình đề thi" ? "class='active'" : ""; ?> >
-                    <a href="<?php echo $home_url; ?>admin/exam_config/view/exam_config.php">Cấu hình đề thi</a>
-                   </li>    
-
-                   <li <?php echo $page_title=="Danh mục kết quả thi" ? "class='active'" : ""; ?> >
-                    <a href="<?php echo $home_url; ?>admin/result/view/result.php">Kết quả thi</a>
-                   </li>                  
-                   
-                  </ul>
-                </li>
-            </ul>
- 
-            <!-- options in the upper right corner of the page -->
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                        &nbsp;&nbsp;<?php echo $_SESSION['firstname']; ?>
-                        &nbsp;&nbsp;<span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu" role="menu">
-                        <!-- log out user -->
-                        <li><a href="<?php echo $home_url; ?>logout.php">Logout</a></li>
-                    </ul>
-                </li>
-            </ul>
- 
-        </div><!--/.nav-collapse -->
- 
+<div class="sidebar">
+    <div class="profile">
+        <img src="https://inkythuatso.com/uploads/images/2021/12/logo-dai-hoc-vinh-inkythuatso-01-20-13-39-09.jpg" alt="profile_picture">
+        <h3><?php echo $_SESSION['firstname']; ?> <?php echo $_SESSION['lastname']; ?></h3>
+        <p>Admin</p>
     </div>
+    <ul>
+        <li>
+            <a href="<?php echo $home_url; ?>admin/index.php" <?php echo $page_title=="Trang chủ" ? "class='active'" : ""; ?>>
+                <span class="icon"><i class="fas fa-home"></i></span>
+                <span class="item">Trang chủ</span>
+            </a>
+        </li>
+        <li>
+            <a href="<?php echo $home_url; ?>admin/read_users.php" <?php echo $page_title=="Danh sách người dùng" ? "class='active'" : ""; ?>>
+                <span class="icon"><i class="fas fa-user-friends"></i></span>
+                <span class="item">Tài khoản</span>
+            </a>
+        </li>
+        <li>
+            <a href="<?php echo $home_url; ?>admin/subject/view/subject.php" <?php echo $page_title=="Danh sách môn học" ? "class='active'" : ""; ?>>
+                <span class="icon"><i class="fas fa-book"></i></span>
+                <span class="item">Môn học</span>
+            </a>
+        </li>
+        <li>
+            <a href="<?php echo $home_url; ?>admin/question/view/question.php" <?php echo $page_title=="Danh sách câu hỏi" ? "class='active'" : ""; ?>>
+                <span class="icon"><i class="fas fa-question"></i></span>
+                <span class="item">Câu hỏi</span>
+            </a>
+        </li>
+        <li>
+            <a href="<?php echo $home_url; ?>admin/exam_config/view/exam_config.php"  <?php echo $page_title=="Cấu hình đề thi" ? "class='active'" : ""; ?>>
+                <span class="icon"><i class="fas fa-database"></i></span>
+                <span class="item">Cấu hình đề thi</span>
+            </a>
+        </li>
+        <li>
+            <a href="<?php echo $home_url; ?>admin/result/view/result.php" <?php echo $page_title=="Danh mục kết quả thi" ? "class='active'" : ""; ?>>
+                <span class="icon"><i class="fas fa-chart-line"></i></span>
+                <span class="item">Kết quả thi</span>
+            </a>
+        </li>
+        <li>
+            <a href="<?php echo $home_url; ?>logout.php">
+                <span class="icon"><i class="fas fa-sign-out-alt"></i></span>
+                <span class="item">Đăng xuất</span>
+            </a>
+        </li>
+    </ul>
 </div>
-<!-- /navbar -->
+
+ 
