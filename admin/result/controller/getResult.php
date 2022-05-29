@@ -9,7 +9,11 @@ if($_GET['method'] == "load_Results")
 	$database = new Database();
 	$db = $database->getConnection();
 	$result = new Result($db);
-	$stmt = $result->getResults();
+	if(isset($_GET['id_example']) && $_GET['id_example'] !== '') {
+		$stmt = $result->getResultsByExam($_GET['id_example']);
+	} else {
+		$stmt = $result->getResults();
+	}
 	$data=array();
 	while ($rs = $stmt->fetch(PDO::FETCH_ASSOC)) {
 		   $row=array();

@@ -16,6 +16,7 @@ if($_GET['method'] == "load_users")
 	while ($rs = $stmt->fetch(PDO::FETCH_ASSOC)) {
 		$row=array();
 		$row['ID_User']=addslashes($rs["ID_User"]);
+		$row['MSSV']=addslashes($rs["MSSV"]);
 	    $row['firstname']=addslashes($rs["firstname"]);
 		$row['lastname']=addslashes($rs["lastname"]);
 		$row['email']=addslashes($rs["email"]);

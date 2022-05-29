@@ -8,6 +8,7 @@ class User{
  
     // object properties
     public $id;
+    public $MSSV;
     public $firstname;
     public $lastname;
     public $email;
@@ -27,11 +28,12 @@ class User{
     public function createUser(){
         if(!isset($this->ID_User)){  //them moi
 			$query = "INSERT INTO ".$this->table_name."
-        SET firstname = :firstname, lastname = :lastname, email = :email, contact_number = :contact_number, 
+        SET MSSV = :MSSV, firstname = :firstname, lastname = :lastname, email = :email, contact_number = :contact_number, 
         address = :address, password = :password, access_level = :access_level, status= :status";
 		
 		$stmt = $this->conn->prepare($query);
         $stmt->bindParam(':firstname', $this->firstname);
+        $stmt->bindParam(':MSSV', $this->MSSV);
         $stmt->bindParam(':lastname', $this->lastname);
         $stmt->bindParam(':email', $this->email);
         $stmt->bindParam(':contact_number', $this->contact_number);
@@ -58,7 +60,7 @@ class User{
 		}
     }
     public function getUsers(){
-    	$query = "SELECT ID_User,firstname,lastname,email,contact_number,address,access_level,status FROM users";
+    	$query = "SELECT ID_User,MSSV,firstname,lastname,email,contact_number,address,access_level,status FROM users";
     	$stmt = $this->conn->prepare( $query );
     	$stmt->execute();
     	return $stmt;
@@ -75,13 +77,14 @@ class User{
         // } else {
         //     echo 0 ;
         // }
-        $query = "UPDATE  ".$this->table_name." SET firstname = :firstname, lastname = :lastname, contact_number = :contact_number, address = :address, access_level = :access_level,status = :status, email = :email where ID_User = :ID_User";
+        $query = "UPDATE  ".$this->table_name." SET MSSV = :MSSV, firstname = :firstname, lastname = :lastname, contact_number = :contact_number, address = :address, access_level = :access_level,status = :status, email = :email where ID_User = :ID_User";
 		// echo $query;
 		$stmt = $this->conn->prepare($query);
 
 
 		$stmt->bindParam(':access_level',$this->access_level);
         $stmt->bindParam(':status', $this->status);
+        $stmt->bindParam(':MSSV', $this->MSSV);
         $stmt->bindParam(':email', $this->email);
         $stmt->bindParam(':ID_User', $this->ID_User);
         $stmt->bindParam(':firstname', $this->firstname);
@@ -102,48 +105,92 @@ class User{
     // check if given email exist in the database
     public function emailExists(){
  
-    // query to check if email exists
-    $query = "SELECT ID_User, firstname, lastname, access_level, password, status
-            FROM " . $this->table_name . "
-            WHERE email = ?
-            LIMIT 0,1";
- 
-    // prepare the query
-    $stmt = $this->conn->prepare( $query );
- 
-    // sanitize
-    $this->email=htmlspecialchars(strip_tags($this->email));
- 
-    // bind given email value
-    $stmt->bindParam(1, $this->email);
- 
-    // execute the query
-    $stmt->execute();
- 
-    // get number of rows
-    $num = $stmt->rowCount();
- 
-    // if email exists, assign values to object properties for easy access and use for php sessions
-    if($num>0){
- 
-        // get record details / values
-        $row = $stmt->fetch(PDO::FETCH_ASSOC);
- 
-        // assign values to object properties
-        $this->id = $row['ID_User'];
-        $this->firstname = $row['firstname'];
-        $this->lastname = $row['lastname'];
-        $this->access_level = $row['access_level'];
-        $this->password = $row['password'];
-        $this->status = $row['status'];
- 
-        // return true because email exists in the database
-        return true;
+        // query to check if email exists
+        $query = "SELECT ID_User, firstname, lastname, access_level, password, status
+                FROM " . $this->table_name . "
+                WHERE email = ?
+                LIMIT 0,1";
+    
+        // prepare the query
+        $stmt = $this->conn->prepare( $query );
+    
+        // sanitize
+        $this->email=htmlspecialchars(strip_tags($this->email));
+        // bind given email value
+        $stmt->bindParam(1, $this->email);
+    
+        // execute the query
+        $stmt->execute();
+    
+        // get number of rows
+        $num = $stmt->rowCount();
+    
+        // if email exists, assign values to object properties for easy access and use for php sessions
+        if($num>0){
+    
+            // get record details / values
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+    
+            // assign values to object properties
+            $this->id = $row['ID_User'];
+            $this->firstname = $row['firstname'];
+            $this->lastname = $row['lastname'];
+            $this->access_level = $row['access_level'];
+            $this->password = $row['password'];
+            $this->status = $row['status'];
+    
+            // return true because email exists in the database
+            return true;
+        }
+    
+        // return false if email does not exist in the database
+        return false;
     }
- 
-    // return false if email does not exist in the database
-    return false;
-}
+    // check if given MSSV exist in the database
+    public function mssvExists(){
+
+        // query to check if email exists
+        $query = "SELECT ID_User, firstname, lastname, access_level, password, status
+                FROM " . $this->table_name . "
+                WHERE MSSV = ?
+                LIMIT 0,1";
+    
+        // prepare the query
+        $stmt = $this->conn->prepare( $query );
+    
+        // sanitize
+        // $this->email =htmlspecialchars(strip_tags($this->email));
+    
+        // bind given email value
+        $stmt->bindParam(1, $this->MSSV);
+    
+        // execute the query
+        $stmt->execute();
+    
+        // get number of rows
+        $num = $stmt->rowCount();
+    
+        // if email exists, assign values to object properties for easy access and use for php sessions
+        if($num>0){
+    
+            // get record details / values
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+    
+            // assign values to object properties
+            $this->id = $row['ID_User'];
+            $this->firstname = $row['firstname'];
+            $this->lastname = $row['lastname'];
+            $this->access_level = $row['access_level'];
+            $this->password = $row['password'];
+            $this->status = $row['status'];
+    
+            // return true because email exists in the database
+            return true;
+        }
+    
+        // return false if email does not exist in the database
+        return false;
+    }
    // create new user record
  public function create(){
  
@@ -210,10 +257,10 @@ class User{
 }
     // read all user records
   function readAll($from_record_num, $records_per_page){
- 
     // query to read all user records, with limit clause for pagination
     $query = "SELECT
                 ID_User,
+                MSSV,
                 firstname,
                 lastname,
                 email,

@@ -35,18 +35,24 @@ if(isset($_POST['Submit'])){
                 $database = new Database();
                 $db = $database->getConnection();
                 $users = new User($db);
-                
-                $users->firstname = isset($Row[0]) ? $Row[0] : '';
-                $users->lastname = isset($Row[1]) ? $Row[1] : '';
-                $users->email = isset($Row[2]) ? $Row[2] : '';
-                $users->contact_number = isset($Row[3]) ? $Row[3] : '';
-                $users->address = isset($Row[4]) ? $Row[4] : '';
-                $users->password = isset($Row[5]) ? htmlspecialchars($Row[5]) : htmlspecialchars('123456');
-                $users->access_level = 'Student';
-                $users->status = 1;
-    
-                $stmt = $users->createUser();
-                echo $stmt;
+             
+                // set user email to detect if it already exists
+                $users->email = isset($Row[3]) ? $Row[3] : '';
+                $users->MSSV = isset($Row[0]) ? $Row[0] : '';
+                // check if email already exists
+                if($users->emailExists() == false && $users->mssvExists() == false) {
+                  $users->firstname = isset($Row[1]) ? $Row[1] : '';
+                  $users->lastname = isset($Row[2]) ? $Row[2] : '';
+                  $users->email = isset($Row[3]) ? $Row[3] : '';
+                  $users->contact_number = isset($Row[4]) ? $Row[4] : '';
+                  $users->address = isset($Row[5]) ? $Row[5] : '';
+                  $users->password = isset($Row[6]) ? htmlspecialchars($Row[6]) : htmlspecialchars('123456');
+                  $users->access_level = 'Student';
+                  $users->status = 1;
+      
+                  $stmt = $users->createUser();
+                  echo $stmt;
+                }
             }
         }
 

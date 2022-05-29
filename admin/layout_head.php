@@ -17,6 +17,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.0/locale/bootstrap-table-en-US.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.0/extensions/angular/bootstrap-table-angular.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
      <!-- admin custom CSS -->
     <link href="<?php echo $home_url . "libs/css/admin.css" ?>" rel="stylesheet" />
     <link rel="icon" href="<?php echo $home_url?>/images/favicon.png" type="image/png"/>
@@ -24,18 +25,32 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body ng-controller="TestAppCtrl">
-
-    <?php
-    // include top navigation bar
-    include_once "navigation.php";
-    ?>
- 
-    <!-- container -->
-    <div class="container">
- 
-        <!-- display page title -->
-        <div class="col-md-12">
-            <div class="page-header">
-                <h1><?php echo isset($page_title) ? $page_title : "The Code of a Ninja"; ?></h1>
-            </div>
+    <div class="wrapper">
+        <div class="sidebar">
+        <?php
+            // include top navigation bar
+            include_once "navigation.php";
+        ?>
         </div>
+        <div class="section">
+            <div class="top_navbar">
+                <div class="hamburger">
+                    <a href="#">
+                        <i class="fas fa-bars"></i>
+                    </a>
+                </div>
+            </div>
+            <div>
+               <!-- display page title -->
+                <div class="col-md-12">
+                    <div class="page-header">
+                        <h1><?php echo isset($page_title) ? $page_title : "The Code of a Ninja"; ?></h1>
+                    </div>
+                </div>
+
+    <script>
+      var hamburger = document.querySelector(".hamburger");
+	hamburger.addEventListener("click", function(){
+		document.querySelector("body").classList.toggle("active");
+	})
+    </script>

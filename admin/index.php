@@ -6,7 +6,7 @@ include_once "../config/core.php";
 include_once "login_checker.php";
  
 // set page title
-$page_title="Admin Index";
+$page_title="Trang chủ";
  
 // include page header HTML
 include 'layout_head.php';
@@ -17,21 +17,23 @@ include 'layout_head.php';
         $action = isset($_GET['action']) ? $_GET['action'] : "";
  
         // tell the user he's already logged in
-        if($action=='already_logged_in'){
-            echo "<div class='alert alert-info'>";
-                echo "<strong>You</strong> are already logged in.";
-            echo "</div>";
-        }
+        // if($action=='already_logged_in'){
+        //     echo "<div class='alert alert-info'>";
+        //         echo "<strong>You</strong> are already logged in.";
+        //     echo "</div>";
+        // }
  
-        else if($action=='logged_in_as_admin'){
-            echo "<div class='alert alert-info'>";
-                echo "<strong>You</strong> are logged in as admin.";
-            echo "</div>";
-        }
+        // else if($action=='logged_in_as_admin'){
+        //     echo "<div class='alert alert-info'>";
+        //         echo "<strong>You</strong> are logged in as admin.";
+        //     echo "</div>";
+        // }
  
-        echo "<div class='alert alert-info'>";
-            echo "Contents of your admin section will be here.";
-        echo "</div>";
+        // echo "<div class='alert alert-info'>";
+        //     echo "Contents of your admin section will be here.";
+        // echo "</div>";
+
+        echo '<img src="https://img.freepik.com/free-vector/young-man-working-hard-with-six-arms-with-calendar-background-vector-illustration_327176-63.jpg" alt="profile_picture" style="text-align: center;margin: 0 15%;" width="70%">';
  
     echo "</div>";
  

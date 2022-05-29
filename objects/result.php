@@ -61,6 +61,14 @@ class Result
     	$stmt->execute();
     	return $stmt;
 	}
+
+	public function getResultsByExam($IdExam){
+    	$query = "SELECT a.ID_User,firstname,lastname,name,score from users a, exam_config b, exam c where a.ID_User=c.ID_User and c.ID_ExamConfig=b.ID_ExamConfig and b.ID_ExamConfig=".$IdExam;
+    	$stmt = $this->conn->prepare( $query );
+    	$stmt->execute();
+    	return $stmt;
+	}
+
 	public function getResultsbyUserID($IDuser){
     	$query = "SELECT a.ID_User,firstname,lastname,name,score from users a, exam_config b, exam c where a.ID_User=c.ID_User and c.ID_ExamConfig=b.ID_ExamConfig and a.ID_User=".$IDuser;
     	$stmt = $this->conn->prepare( $query );
