@@ -101,6 +101,7 @@ app.controller("examCtl", function($scope,$http,$timeout) {
         /* Check whether the HTTP Request is successful or not. */
             request.then(function (response) {
                 $scope.exam.user = response.data.records;
+                console.log("🚀 ~ file: exam_config.js ~ line 104 ~ $scope.exam", $scope.exam)
                 $scope.bsTableSelectedUserControl.options.data = $scope.exam.user;
                 $scope.bsTableSelectedUserControl.options.totalRows = $scope.exam.user.length; 
         });
@@ -165,10 +166,14 @@ app.controller("examCtl", function($scope,$http,$timeout) {
             pagination: true,
             pageSize: 10,
             pageList: [5, 10, 25, 50, 100],
-            onCheck: function (row, $element) {
+            onCheck: async function (row, $element) {
                 $scope.$apply(function () {
                     $scope.check=true;
-                    $scope.exam=row;
+                    $scope.exam=row;  
+                    $scope.exam.subject = $scope.Subjects.find(item => {
+                        return item.ID_Subject ==  $scope.exam.subject.ID_Subject
+                    });
+      
                     console.log($scope.exam);
                 });
             },

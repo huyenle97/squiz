@@ -21,31 +21,31 @@ include '../../layout_head.php';
                     </div>
                     <div class="modal-body">
 
-                     <div class="panel panel-default" style="border: solid 1px #cddbd1;">
-                         <div class="panel-heading text-center"> <b style="font-size:18px;"> Thông tin đề thi</b>  </div>
-                         <div class="panel-body">
+                    <div class="panel panel-default" style="border: solid 1px #cddbd1;">
+                        <div class="panel-heading text-center"> <b style="font-size:18px;"> Thông tin đề thi</b>  </div>
+                            <div class="panel-body">
 
-                         <div class="col-xs-12">
-                             <label class="bold" > Môn học </label>
-                             <select class="form-control" data-ng-model="exam.subject"  ng-options="sj.subjectName for sj in Subjects"></select>
-                         </div>
+                                <div class="col-xs-12 exam">
+                                    <label class="bold" > Môn học </label>
+                                    <select class="form-control" data-ng-model="exam.subject"  ng-options="sj.subjectName for sj in Subjects"></select>
+                                </div>
 
-                             <div class="col-xs-12">
+                                <div class="col-xs-12 exam">
                                     <label class="bold">Tên đề thi</label>
                                     <input type="text" class="form-control" ng-model="exam.Name" />        
-                             </div>
-                         
-                        <div class="col-xs-6">
-                            <label class="bold">Số lượng câu hỏi</label>
-                            <input type="number" class="form-control" ng-model="exam.Num_Question"  />
-                        </div>
+                                </div>
+                                
+                                <div class="col-xs-6 exam">
+                                    <label class="bold"> Số lượng câu hỏi </label>
+                                    <input type="number" class="form-control" ng-model="exam.Num_Question"  />
+                                </div>
 
-                        <div class="col-xs-6" >
-                            <label class="bold">Thời gian làm bài</label>
-                            <input type="number" class="form-control" ng-model="exam.Totaltime" />
-                        </div>
-                        
-                     </div>
+                                <div class="col-xs-6 exam">
+                                    <label class="bold"> Thời gian làm bài </label>
+                                    <input type="number" class="form-control" ng-model="exam.Totaltime" />
+                                </div>
+                            
+                            </div>
                      <div class="panel panel-default" style="border: solid 1px #cddbd1;">
                          <div class="panel-heading text-center"> <b style="font-size:18px;"> Thêm thí sinh </b>  </div>
                             <div class="panel-body">

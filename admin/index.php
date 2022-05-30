@@ -33,7 +33,7 @@ include 'layout_head.php';
         //     echo "Contents of your admin section will be here.";
         // echo "</div>";
 
-        echo '<img src="https://img.freepik.com/free-vector/young-man-working-hard-with-six-arms-with-calendar-background-vector-illustration_327176-63.jpg" alt="profile_picture" style="text-align: center;margin: 0 15%;" width="70%">';
+        echo '<img src="../images/bgr2.jpg" alt="profile_picture" style="text-align: center;" width="90%"; height="780px">';
  
     echo "</div>";
  

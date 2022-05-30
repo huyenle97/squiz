@@ -20,6 +20,8 @@ if($_GET['method'] == "load_Exams")
 		   $row['Num_Question']=(int)$rs["Num_Question"];
 		   $row['Totaltime']=(int)$rs["Totaltime"];
 		   $row['subjectName']=addslashes($rs["subjectName"]);
+		   $row['subject']['subjectName']=addslashes($rs["subjectName"]);
+		   $row['subject']['ID_Subject']=(int)$rs['ID_Subject'];
 		   $data[]=$row;
 	}
 	$jsonData=array();

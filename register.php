@@ -92,38 +92,38 @@ if($user->create()){
  
         <tr>
             <td class='width-30-percent'>Họ</td>
-            <td><input type='text' name='firstname' class='form-control' required value="<?php echo isset($_POST['firstname']) ? htmlspecialchars($_POST['firstname'], ENT_QUOTES) : "";  ?>" /></td>
+            <td><input type='text' name='firstname' class='form-control' required oninvalid="setCustomValidity('Vui lòng không bỏ trống!')" oninput="setCustomValidity('')" value="<?php echo isset($_POST['firstname']) ? htmlspecialchars($_POST['firstname'], ENT_QUOTES) : "";  ?>" /></td>
         </tr>
  
         <tr>
             <td>Tên</td>
-            <td><input type='text' name='lastname' class='form-control' required value="<?php echo isset($_POST['lastname']) ? htmlspecialchars($_POST['lastname'], ENT_QUOTES) : "";  ?>" /></td>
+            <td><input type='text' name='lastname' class='form-control' required oninvalid="setCustomValidity('Vui lòng không bỏ trống!')" oninput="setCustomValidity('')" value="<?php echo isset($_POST['lastname']) ? htmlspecialchars($_POST['lastname'], ENT_QUOTES) : "";  ?>" /></td>
         </tr>
  
         <tr>
             <td>Số điện thoại</td>
-            <td><input type='text' name='contact_number' class='form-control' required value="<?php echo isset($_POST['contact_number']) ? htmlspecialchars($_POST['contact_number'], ENT_QUOTES) : "";  ?>" /></td>
+            <td><input type='text' name='contact_number' class='form-control' required oninvalid="setCustomValidity('Vui lòng không bỏ trống!')" oninput="setCustomValidity('')" value="<?php echo isset($_POST['contact_number']) ? htmlspecialchars($_POST['contact_number'], ENT_QUOTES) : "";  ?>" /></td>
         </tr>
  
         <tr>
             <td>Địa chỉ</td>
-            <td><textarea name='address' class='form-control' required><?php echo isset($_POST['address']) ? htmlspecialchars($_POST['address'], ENT_QUOTES) : "";  ?></textarea></td>
+            <td><textarea name='address' class='form-control' required oninvalid="setCustomValidity('Vui lòng không bỏ trống!')" oninput="setCustomValidity('')"><?php echo isset($_POST['address']) ? htmlspecialchars($_POST['address'], ENT_QUOTES) : "";  ?></textarea></td>
         </tr>
  
         <tr>
             <td>Email</td>
-            <td><input type='email' name='email' class='form-control' required value="<?php echo isset($_POST['email']) ? htmlspecialchars($_POST['email'], ENT_QUOTES) : "";  ?>" /></td>
+            <td><input type='email' name='email' class='form-control' required oninvalid="setCustomValidity('Vui lòng không bỏ trống!')" oninput="setCustomValidity('')" value="<?php echo isset($_POST['email']) ? htmlspecialchars($_POST['email'], ENT_QUOTES) : "";  ?>" /></td>
         </tr>
  
         <tr>
             <td>Mật khẩu</td>
-            <td><input type='password' name='password' class='form-control' required id='passwordInput'></td>
+            <td><input type='password' name='password' class='form-control' required id='passwordInput' oninvalid="setCustomValidity('Vui lòng không bỏ trống!')" oninput="setCustomValidity('')"></td>
         </tr>
  
         <tr>
             <td></td>
             <td>
-                <button type="submit" class="btn btn-primary">
+                <button type="submit" class="btn btn-primary accept">
                     <span class="glyphicon glyphicon-check"></span>  Đăng ký
                 </button>
             </td>

@@ -80,7 +80,7 @@ if($_POST){
         <tr>
             <td></td>
             <td>
-                <button type="submit" class="btn btn-primary">
+                <button type="submit" class="btn btn-primary accept">
                     <span class="glyphicon glyphicon-plus"></span> Xác nhận
                 </button>
             </td>

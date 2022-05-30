@@ -87,7 +87,7 @@ class Exam_Config
 	}
 
     public function getExams(){
-    	$query = "SELECT ID_ExamConfig , Name, Num_Question, Totaltime,subjectName FROM exam_config a, subject b where a.ID_Subject= b.ID_Subject ";
+    	$query = "SELECT ID_ExamConfig , Name, Num_Question, Totaltime,subjectName, a.ID_Subject FROM exam_config a, subject b where a.ID_Subject= b.ID_Subject ";
     	$stmt = $this->conn->prepare( $query );
     	$stmt->execute();
     	return $stmt;

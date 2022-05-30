@@ -405,3 +405,11 @@ div#blueimp-gallery div.modal{ overflow: visible; }
     .form-register{
         margin-left: 10%
     }
+    .accept{
+        background-color: #18901a;
+        border-color: #18901a;
+    }
+    .accept:hover{
+        background-color: #0fb012;
+        border-color: #18901a;
+    }

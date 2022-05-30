@@ -58,6 +58,14 @@ class Subject
     	return $stmt;
 	}
 
+	public function getSubjectById(){
+    	$query = "SELECT ID_Subject , subjectName FROM subject  WHERE ID_Subject=".$this->ID_Subject ;
+    	$stmt = $this->conn->prepare( $query );
+    	$stmt->execute();
+    	return $stmt;
+	}
+
+
 	public function deleleSubject(){   
 		$query1 = "DELETE FROM subject WHERE ID_Subject=".$this->ID_Subject; 
     	$stmt1 = $this->conn->prepare( $query1 );
