@@ -7,7 +7,7 @@ if(empty($_SESSION['logged_in'])){
 }
  
 // if access level was not 'Admin', redirect him to login page
-else if($_SESSION['access_level']!="Admin"){
+else if($_SESSION['access_level']=="Student"){
     header("Location: {$home_url}login.php?action=not_admin");
 }
  

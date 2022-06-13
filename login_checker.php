@@ -2,7 +2,7 @@
 // login checker for 'customer' access level
  
 // if access level was not 'Admin', redirect him to login page
-if(isset($_SESSION['access_level']) && $_SESSION['access_level']=="Admin"){
+if(isset($_SESSION['access_level']) && $_SESSION['access_level']!="Student"){
     header("Location: {$home_url}admin/read_users.php?action=logged_in_as_admin");
 }
  

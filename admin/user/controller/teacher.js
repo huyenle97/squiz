@@ -13,7 +13,7 @@ app.controller("userCtrl", function($scope,$http,$timeout) {
     }
     
     $scope.getUsers=function(){
-        $http.get("http://localhost/squiz/admin/user/controller/getUsers.php?method=load_users").then(function (response) {
+        $http.get("http://localhost/squiz/admin/user/controller/getUsers.php?method=load_teachers").then(function (response) {
         $scope.Users = response.data.records;
         $scope.bsTableControl.options.data =  $scope.Users;
         $scope.bsTableControl.options.totalRows = $scope.Users.length; 
@@ -28,8 +28,7 @@ app.controller("userCtrl", function($scope,$http,$timeout) {
 
     
     $scope.createUser= function(){
-        $scope.user.access_level = 'Student'
-        console.log($scope.user);
+        $scope.user.access_level = 'Teacher'
         var request = $http({
             method: "POST",
             url: "http://localhost/squiz/admin/user/controller/postUser.php?method=post_user",
@@ -169,7 +168,7 @@ app.controller("userCtrl", function($scope,$http,$timeout) {
                 checkbox: true
             }, {
                 field: 'MSSV',
-                title: 'MSSV',
+                title: 'Mã GV',
                 align: 'center',
                 valign: 'bottom',
                 sortable: true

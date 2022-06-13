@@ -12,10 +12,22 @@
                 <span class="item">Trang chủ</span>
             </a>
         </li>
+        <?php 
+        if(isset($_SESSION['access_level']) && $_SESSION['access_level']=="Admin"){
+            ?>
         <li>
-            <a href="<?php echo $home_url; ?>admin/read_users.php" <?php echo $page_title=="Danh sách người dùng" ? "class='active'" : ""; ?>>
+            <a href="<?php echo $home_url; ?>admin/read_teachers.php" <?php echo $page_title=="Danh sách giảng viên" ? "class='active'" : ""; ?>>
+                <span class="icon"><i class="fas fa-chalkboard-teacher"></i></span>
+                <span class="item">Giảng viên</span>
+            </a>
+        </li>
+        <?php 
+        }
+        ?>
+        <li>
+            <a href="<?php echo $home_url; ?>admin/read_users.php" <?php echo $page_title=="Danh sách sinh viên" ? "class='active'" : ""; ?>>
                 <span class="icon"><i class="fas fa-user-friends"></i></span>
-                <span class="item">Tài khoản</span>
+                <span class="item">Sinh viên</span>
             </a>
         </li>
         <li>

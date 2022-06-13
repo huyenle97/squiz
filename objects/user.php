@@ -60,11 +60,19 @@ class User{
 		}
     }
     public function getUsers(){
-    	$query = "SELECT ID_User,MSSV,firstname,lastname,email,contact_number,address,access_level,status FROM users";
+    	$query = "SELECT ID_User,MSSV,firstname,lastname,email,contact_number,address,access_level,status FROM users where access_level = 'Student'";
     	$stmt = $this->conn->prepare( $query );
     	$stmt->execute();
     	return $stmt;
     }
+
+    public function getTeachers(){
+    	$query = "SELECT ID_User,MSSV,firstname,lastname,email,contact_number,address,access_level,status FROM users  where access_level = 'Teacher'";
+    	$stmt = $this->conn->prepare( $query );
+    	$stmt->execute();
+    	return $stmt;
+    }
+
     public function updateUser(){
         // $query1 = "UPDATE users set access_level='$acc_lv' where email= '$mail'";
     	// $stmt1 = $this->conn->prepare( $query1 );
@@ -256,34 +264,64 @@ class User{
     echo "</pre>";
 }
     // read all user records
-  function readAll($from_record_num, $records_per_page){
-    // query to read all user records, with limit clause for pagination
-    $query = "SELECT
-                ID_User,
-                MSSV,
-                firstname,
-                lastname,
-                email,
-                contact_number,
-                access_level,
-                created
-            FROM " . $this->table_name . "
-            ORDER BY id DESC
-            LIMIT ?, ?";
- 
-    // prepare query statement
-    $stmt = $this->conn->prepare( $query );
- 
-    // bind limit clause variables
-    $stmt->bindParam(1, $from_record_num, PDO::PARAM_INT);
-    $stmt->bindParam(2, $records_per_page, PDO::PARAM_INT);
- 
-    // execute query
-    $stmt->execute();
- 
-    // return values
-    return $stmt;
-}
+    function readAll($from_record_num, $records_per_page){
+        // query to read all user records, with limit clause for pagination
+        $query = "SELECT
+                    ID_User,
+                    MSSV,
+                    firstname,
+                    lastname,
+                    email,
+                    contact_number,
+                    access_level,
+                    created
+                FROM " . $this->table_name . " WHERE access_level = 'Student'
+                ORDER BY id DESC
+                LIMIT ?, ?";
+    
+        // prepare query statement
+        $stmt = $this->conn->prepare( $query );
+    
+        // bind limit clause variables
+        $stmt->bindParam(1, $from_record_num, PDO::PARAM_INT);
+        $stmt->bindParam(2, $records_per_page, PDO::PARAM_INT);
+    
+        // execute query
+        $stmt->execute();
+    
+        // return values
+        return $stmt;
+    }
+
+    // read all user records
+    function readAllTeacher($from_record_num, $records_per_page){
+        // query to read all user records, with limit clause for pagination
+        $query = "SELECT
+                    ID_User,
+                    MSSV,
+                    firstname,
+                    lastname,
+                    email,
+                    contact_number,
+                    access_level,
+                    created
+                FROM " . $this->table_name . " WHERE access_level = 'Teacher'
+                ORDER BY id DESC
+                LIMIT ?, ?";
+    
+        // prepare query statement
+        $stmt = $this->conn->prepare( $query );
+    
+        // bind limit clause variables
+        $stmt->bindParam(1, $from_record_num, PDO::PARAM_INT);
+        $stmt->bindParam(2, $records_per_page, PDO::PARAM_INT);
+    
+        // execute query
+        $stmt->execute();
+    
+        // return values
+        return $stmt;
+    }
     // used for paging users
     public function countAll(){
  
@@ -495,7 +533,7 @@ public function updatePass(){
 }
 
 public function deleleUser(){
-    $query1 = "DELETE FROM exam WHERE ID_User=".$this->ID_User; 
+    $query1 = "DELETE exam,exam_question  FROM exam INNER JOIN exam_question ON exam.ID_Exam = exam_question.ID_Exam WHERE exam.ID_User=".$this->ID_User; 
     $stmt1 = $this->conn->prepare( $query1 );
     if($stmt1->execute()) $rs1=1;
     else $rs1=0; 
@@ -511,7 +549,7 @@ public function deleleUser(){
     if($stmt3->execute()) $rs3=1;
     else $rs3=0;
 
-    if($rs1==1|| $rs2==1||rs3==1) echo 1;
+    if($rs1==1 || $rs2==1 || $rs3==1) echo $rs1;
     else echo 0;
 }
 

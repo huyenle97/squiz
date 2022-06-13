@@ -8,7 +8,7 @@ include_once "login_checker.php";
 // include classes
 include_once '../config/database.php';
 include_once '../objects/user.php';
-$page_title="Danh sách sinh viên";
+$page_title="Danh sách giảng viên";
 // get database connection
 $database = new Database();
 $db = $database->getConnection();
@@ -22,16 +22,16 @@ include_once "layout_head.php";
 echo "<div class='col-md-12'>";
  
     // read all users from the database
-    $stmt = $user->readAll($from_record_num, $records_per_page);
+    $stmt = $user->readAllTeacher($from_record_num, $records_per_page);
  
     // count retrieved users
     $num = $stmt->rowCount();
  
     // to identify page for paging
-    $page_url="read_users.php?";
+    $page_url="read_teachers.php?";
  
     // include products table HTML template
-    include_once "user/view/read_users_template.php";
+    include_once "user/view/read_teachers_template.php";
  
 echo "</div>";
  

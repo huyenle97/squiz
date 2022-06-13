@@ -31,6 +31,34 @@ if($_GET['method'] == "load_users")
 	echo json_encode($jsonData);
  
 }
+if($_GET['method'] == "load_teachers")
+{
+	
+	$database = new Database();
+	$db = $database->getConnection();
+
+	$user = new User($db);
+
+	$stmt = $user->getTeachers();
+	$data=array();
+	while ($rs = $stmt->fetch(PDO::FETCH_ASSOC)) {
+		$row=array();
+		$row['ID_User']=addslashes($rs["ID_User"]);
+		$row['MSSV']=addslashes($rs["MSSV"]);
+	    $row['firstname']=addslashes($rs["firstname"]);
+		$row['lastname']=addslashes($rs["lastname"]);
+		$row['email']=addslashes($rs["email"]);
+		$row['contact_number']=addslashes($rs["contact_number"]);
+		$row['access_level']=addslashes($rs["access_level"]);
+		$row['address']=addslashes($rs["address"]);
+		$row['status']=addslashes($rs["status"]);
+		$data[]=$row;
+	}
+	$jsonData=array();
+	$jsonData['records']=$data;
+	echo json_encode($jsonData);
+ 
+}
 
 
 

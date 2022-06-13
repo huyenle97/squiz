@@ -300,4 +300,44 @@
     .exam{
         margin-top: 20px;
     }
+
+    .btn-file-upload{
+        position:relative;
+        margin-top: 10px;
+    }
+   
+   .btn-file-upload:after{
+        content: attr(value);
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 18.5%;
+        background: gainsboro;
+        color: black;
+        border-radius: 2px;
+        text-align: center;
+        font-size: 14px;
+        line-height: 2.5;
+    }
+
+    input[type="file"]{
+        color: transparent;
+    }
+
+    @media only screen and (max-width: 500px) {
+        .btn-file-upload:after {
+          width: 25%;
+        }
+    }
+
+    @media only screen and (max-width: 367px) {
+        .btn-file-upload:after {
+          width: 33%;
+        }
+    }
+
+    .no-records-found {
+        display: none;
+    }
     

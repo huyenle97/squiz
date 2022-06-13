@@ -9,7 +9,6 @@
 	$database = new Database();
 	$db = $database->getConnection();
 	$user = new User($db);
-
 	$user->ID_User = $IDUs;
 	$stmt = $user->deleleUser(); 
     echo $stmt;

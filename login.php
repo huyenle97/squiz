@@ -45,7 +45,7 @@ if ($email_exists && password_verify($_POST['password'], $user->password) && $us
     $_SESSION['lastname'] = $user->lastname;
  
     // if access level is 'Admin', redirect to admin section
-    if($user->access_level=='Admin'){
+    if($user->access_level!='Student'){
         header("Location: {$home_url}admin/read_users.php?action=login_success");
     }
  

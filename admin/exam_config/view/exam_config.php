@@ -10,6 +10,25 @@ include '../../layout_head.php';
 ?>
 <div ng-app="testApp" ng-controller="examCtl">
     <div class="col-md-12">
+    <div id="modalDelete" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header" id="mydivheader">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title"> Xác nhận xóa</h4>
+                </div>
+                <div class="modal-body create-account">
+                    <p>Bạn chắc chắn muốn xóa đề thi này?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" name="Submit" data-dismiss="modal" ng-click="deleteExam()" class="btn btn-primary" >Xóa</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
     <div id="myModal" class="modal fade" role="dialog">
             <div class="modal-dialog">
 
@@ -102,7 +121,7 @@ include '../../layout_head.php';
 
         <button class="btn btn-success margin-10" style="margin:10px;"data-ng-click="createExam()"data-toggle="modal" data-target="#myModal"><span class="glyphicon btn-glyphicon glyphicon-plus img-circle"></span></i> Thêm mới</button>
         <button class="btn btn-primary margin-10" style="margin:10px;"data-ng-click="editExam()" data-ng-disabled="!check" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-pencil"></span> Chỉnh sửa</button>
-        <button class="btn btn-danger margin-10" style="margin:10px;"data-ng-click="confirmDeleteExam()" data-ng-disabled="!check"><span class="glyphicon glyphicon-trash"></span> Xóa</button>
+        <button class="btn btn-danger margin-10" style="margin:10px;" data-toggle="modal" data-target="#modalDelete" data-ng-disabled="!check"><span class="glyphicon glyphicon-trash"></span> Xóa</button>
     <table bs-table-control="bsTableExamControl"></table>
     <script src="../controller/exam_config.js"></script>
 
