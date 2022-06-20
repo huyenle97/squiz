@@ -38,8 +38,8 @@ app.controller("questionCtl", function($scope,$http,$timeout) {
             request.then(function (response) {
                 $scope.result=response.data;
                 $scope.getQuestions();
-                $scope.question={};
-                $scope.listAnswers=[];
+                // $scope.question={};
+                // $scope.listAnswers=[];
                 $timeout($scope.autoHide, 5000);
                 
         });
@@ -124,8 +124,7 @@ app.controller("questionCtl", function($scope,$http,$timeout) {
         });
     }
     $scope.deleteAnswer=function(){
-        var r = confirm("Xác nhận xóa");
-        if (r == true) {
+
             for(var i=0; i<$scope.listAnswers.length; i++){
                 if($scope.listAnswers[i].ContentAs==$scope.ct){
                     $scope.listAnswers.splice(i,1);
@@ -133,9 +132,6 @@ app.controller("questionCtl", function($scope,$http,$timeout) {
                     $scope.bsTableAnswerControl.options.totalRows = $scope.listAnswers.length; 
                 }
             }
-        } else {
-           
-        }
     }
     $scope.getSubjects=function(){
         $http.get("http://localhost/squiz/admin/subject/controller/getSubject.php?method=load_subjects").then(function (response) {
@@ -161,6 +157,9 @@ app.controller("questionCtl", function($scope,$http,$timeout) {
                 $scope.$apply(function () {
                     $scope.check=true;
                     $scope.question=row;
+                    $scope.question.subject = $scope.Subjects.find(item => {
+                        return item.subjectName ==  $scope.question.subjectName
+                    });
                 });
             },
             onUncheck: function (row, $element) {

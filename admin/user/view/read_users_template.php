@@ -116,7 +116,7 @@
             <div class="row">
                 <div class="col-xs-12">
                     <label class="bold">MSSV</label>
-                    <input type="text" class="form-control" ng-model="user.mssv" />
+                    <input type="text" class="form-control"  ng-required="valid" ng-model="user.MSSV" />
                 </div>
             </div>
 
@@ -139,7 +139,7 @@
 
             </div>
             <div class="modal-footer">
-                <button type="button" ng-click="saveUser()" class="btn btn-primary" data-dismiss="modal">Lưu</button>
+                <button type="button" ng-click="saveUser()" class="btn btn-primary" ng-disabled="(!user.firstname || !user.MSSV || (user.status == ''))" data-dismiss="modal">Lưu</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
@@ -183,7 +183,7 @@
             <div class="row">
                 <div class="col-xs-12">
                     <label class="bold">MSSV</label>
-                    <input type="text" class="form-control" ng-model="user.mssv" />
+                    <input type="text" class="form-control"  ng-required="valid" ng-model="user.MSSV" />
                 </div>
             </div>
 
@@ -197,31 +197,23 @@
             <div class="row">
                 <div class="col-xs-12">
                     <label class="bold">Mật khẩu</label>
-                    <input type="text"  class="form-control" ng-model="user.password" />
+                    <input type="password"  class="form-control"  ng-required="valid" ng-model="user.password" />
                 </div>
             </div>
 
-                <div class="row">
-                <div class="col-xs-12">
-                    <label class="bold">Phân quyền</label>
-                    <select class="form-control" ng-model="user.access_level">
-                        <option value='Admin'>Admin</option>
-                        <option value='Student'>Student</option>
-                    </select>
-                </div>
-            </div>
+
             <div class="row">
                 <div class="col-xs-12">
                     <label class="bold">Trạng thái </label>
                     <select class="form-control" ng-model="user.status">
-                        <option value=1>Đang hoạt động</option>
+                        <option value=1 selected>Đang hoạt động</option>
                         <option value=0>Chưa hoạt động</option>
                     </select>
                 </div>
             </div>
             </div>
             <div class="modal-footer">
-                <button type="button" ng-click="createUser()" class="btn btn-primary" data-dismiss="modal" ng-disabled="user.firstname.$invalid">Lưu</button>
+                <button type="button" ng-click="createUser()" class="btn btn-primary" data-dismiss="modal" ng-disabled="(!user.firstname || !user.mssv || !user.password || (user.status == ''))">Lưu</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>

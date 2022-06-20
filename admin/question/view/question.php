@@ -29,6 +29,25 @@ include '../../layout_head.php';
 
         </div>
     </div>
+    <div id="deleteAnswer" class="modal fade" role="dialog" style="    z-index: 2000;">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header" id="mydivheader">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title"> Xác nhận xóa</h4>
+                </div>
+                <div class="modal-body create-account">
+                    <p>Bạn chắc chắn muốn xóa câu trả lời này?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" name="Submit" data-dismiss="modal" ng-click="deleteAnswer()" class="btn btn-primary" >Xóa</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
     <div id="myModal" class="modal fade questionCtl" role="dialog">
             <div class="modal-dialog">
 
@@ -57,7 +76,7 @@ include '../../layout_head.php';
                             <div class="panel-body">
                                  <div class="col-md-12" style="margin-bottom:10px;">
                                      <a class="btn btn-success" ng-click="openAnswer()" data-toggle="modal" data-target="#myAnswer"><span class="glyphicon btn-glyphicon glyphicon-plus img-circle"></span> Thêm đáp án </a>
-                                     <a class="btn btn-danger" ng-click="deleteAnswer()" data-ng-disabled="!check1" > <span class="glyphicon glyphicon-trash"></span> Xóa </a>
+                                     <a class="btn btn-danger"  data-ng-disabled="!check1"  data-toggle="modal" data-target="#deleteAnswer" > <span class="glyphicon glyphicon-trash"></span> Xóa </a>
                                 </div>
                                 <table bs-table-control="bsTableAnswerControl"></table>
                              </div>

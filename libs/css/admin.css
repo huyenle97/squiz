@@ -340,4 +340,9 @@
     .no-records-found {
         display: none;
     }
+
+    .modal {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
     

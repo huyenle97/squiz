@@ -52,15 +52,14 @@ app.controller("ExamDetailCtl", function($scope,$http,$timeout,$location,$window
     $scope.timeclock=function(time){
         var clock;
         $(document).ready(function() {
-            clock = $('.clock').FlipClock(time, {
-                clockFace: 'MinuteCounter',
-                countdown: true,
-                callbacks: {
-                    stop: function() {
-                        $scope.Submit ($scope.Questions);
-                    }
+            $('#timer').attr('data-seconds-left', time)
+            clock = $('.timer').startTimer({
+                onComplete: function(element){
+                    $scope.Submit ($scope.Questions);
                 }
+                    
             });
+
 
         });
     }

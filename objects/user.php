@@ -60,14 +60,14 @@ class User{
 		}
     }
     public function getUsers(){
-    	$query = "SELECT ID_User,MSSV,firstname,lastname,email,contact_number,address,access_level,status FROM users where access_level = 'Student'";
+    	$query = "SELECT ID_User,MSSV,firstname,lastname,email,contact_number,address,password,access_level,status FROM users where access_level = 'Student'";
     	$stmt = $this->conn->prepare( $query );
     	$stmt->execute();
     	return $stmt;
     }
 
     public function getTeachers(){
-    	$query = "SELECT ID_User,MSSV,firstname,lastname,email,contact_number,address,access_level,status FROM users  where access_level = 'Teacher'";
+    	$query = "SELECT ID_User,MSSV,firstname,lastname,email,contact_number,address, password,access_level,status FROM users  where access_level = 'Teacher'";
     	$stmt = $this->conn->prepare( $query );
     	$stmt->execute();
     	return $stmt;

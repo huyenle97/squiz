@@ -40,8 +40,8 @@ app.controller("examCtl", function($scope,$http,$timeout) {
             request.then(function (response) {
                 $scope.result=response.data;
                 $scope.getExams();
-                $scope.exam={};
-                $scope.exam.user=[];
+                // $scope.exam={};
+                // $scope.exam.user=[];
                 $timeout($scope.autoHide, 5000);
                 
         });
@@ -101,7 +101,6 @@ app.controller("examCtl", function($scope,$http,$timeout) {
         /* Check whether the HTTP Request is successful or not. */
             request.then(function (response) {
                 $scope.exam.user = response.data.records;
-                console.log("🚀 ~ file: exam_config.js ~ line 104 ~ $scope.exam", $scope.exam)
                 $scope.bsTableSelectedUserControl.options.data = $scope.exam.user;
                 $scope.bsTableSelectedUserControl.options.totalRows = $scope.exam.user.length; 
         });

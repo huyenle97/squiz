@@ -35,9 +35,14 @@ include '../../../layout_head.php';
                 <i class="far fa-clock" style="margin-right:10px;"></i> Thời gian làm bài: {{config.Totaltime}} phút
             </div>
 
+			<div class="Totaltime" style="margin-top:10px;">
+                <i class="far fa-clock" style="margin-right:10px;"></i> Thời gian còn lại: {{config.Totaltime}} phút
+            </div>
+			<h1 class='timer' id="timer" data-seconds-left="500" style="display:flex;margin-left: 25%;margin-top: 20px;"  ng-if="Isfinish==false"></h1>
+
 			<div class="message"></div>
 			<button type="button" ng-click="checkoptions(Questions)" ng-if="Isfinish==false" style="height:50px; width:100px; margin-left:30%; margin-bottom:10px;margin-top:20px" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Nộp bài</button>
-			<div style="font-size:18px;">
+			<div style="font-size:18px;"  ng-if="Isfinish==true">
 				<div>
 					<p> Kết quả bài thi: </p>
 				</div>

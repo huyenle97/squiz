@@ -155,6 +155,7 @@ app.controller("userCtrl", function($scope,$http,$timeout) {
                 $scope.$apply(function () {
                     $scope.check=true;
                     $scope.user=row;
+                    console.log("🚀 ~ file: teacher.js ~ line 158 ~ $scope.user", $scope.user)
                     console.log($scope.check);
                 });
             },

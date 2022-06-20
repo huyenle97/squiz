@@ -18,7 +18,7 @@
     $users->password=$request->user->password;
     $users->access_level=$request->user->access_level;
     $users->status=$request->user->status;
-	$users->MSSV=$request->user->mssv;
+	$users->MSSV=$request->user->MSSV ;
     $users->status=(int)$users->status;
     
 	if(isset($ID)){
